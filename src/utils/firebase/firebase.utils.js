@@ -13,22 +13,21 @@ import {
   getFirestore,
   doc,
   getDoc,
-  getDocs,
   setDoc,
   collection,
   writeBatch,
   query,
+  getDocs,
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
-  authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
-  projectId: 'crwn-clothing-db-98d4d',
-  storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
-  messagingSenderId: '626766232035',
-  appId: '1:626766232035:web:506621582dab103a4d08d6',
+  apiKey: "AIzaSyChJGFefQgoU5FyX8k0U0MEt5xIvdggQxo",
+  authDomain: "crwn-clothing-db-66b9a.firebaseapp.com",
+  projectId: "crwn-clothing-db-66b9a",
+  storageBucket: "crwn-clothing-db-66b9a.appspot.com",
+  messagingSenderId: "599277617816",
+  appId: "1:599277617816:web:89b22f2e5d5cd4c66706ed"
 };
-
 const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
@@ -47,7 +46,8 @@ export const db = getFirestore();
 
 export const addCollectionAndDocuments = async (
   collectionKey,
-  objectsToAdd
+  objectsToAdd,
+  field
 ) => {
   const batch = writeBatch(db);
   const collectionRef = collection(db, collectionKey);
