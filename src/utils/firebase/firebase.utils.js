@@ -1,4 +1,5 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from '@firebase/app';
+
 import {
   getAuth,
   signInWithRedirect,
@@ -49,8 +50,8 @@ export const addCollectionAndDocuments = async (
   objectsToAdd,
   field
 ) => {
-  const batch = writeBatch(db);
   const collectionRef = collection(db, collectionKey);
+  const batch = writeBatch(db);
 
   objectsToAdd.forEach((object) => {
     const docRef = doc(collectionRef, object.title.toLowerCase());
